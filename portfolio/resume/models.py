@@ -67,10 +67,10 @@ class Language(models.Model):
     def __str__(self) -> str:
         return f"{self.name} - {self.level}"
 
-class Courses(models.Model):
-    program = models.TextField(max_length =40)
-    program_name = models.TextField(max_length =40)
-    cours_name = models.TextField(max_length =40)
+# class Courses(models.Model):
+#     program = models.TextField(max_length =40)
+#     program_name = models.TextField(max_length =40)
+#     cours_name = models.TextField(max_length =40)
 
-    def __str__(self) -> str:
-        return f'{self.cours_name}'
+#     def __str__(self) -> str:
+#         return f'{self.cours_name}'
