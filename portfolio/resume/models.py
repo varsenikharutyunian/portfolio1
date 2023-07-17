@@ -22,50 +22,55 @@ class Education(models.Model):
     def __str__(self) -> str:
         return f"{self.university_name} university grade is {self.grade}"
     
-    
-    
 class Experience(models.Model):
-    job_possition=models.TextField()
-    start_data=models.PositiveIntegerField(validators=[MaxValueValidator(2023), MinValueValidator(1900)])
-    end_data=models.PositiveIntegerField(validators=[MaxValueValidator(2023), MinValueValidator(1900)])
-    is_current=models.BooleanField()
-    addres=models.TextField(max_length=70)
-    job_description=models.TextField()
-    company_name=models.TextField(max_length=70)
-    compani_logo=models.ImageField()
+    position_name = models.TextField(max_length=30, blank=True, null=True)
+    start_date = models.IntegerField(
+        validators=[MaxValueValidator(2023), MinValueValidator(1900)])
+    end_date = models.IntegerField(
+        validators=[MaxValueValidator(2023), MinValueValidator(1900)])
+    company_name = models.TextField(max_length=70)
+    created_on = models.DateTimeField(auto_now=True)
+
+    def __str__(self) -> str:
+        return f'{self.position_name} in {self. company_name}'
+    
+# class SocialMedia(models.Model):
+#     platform_name = models.TextField()
+#     url = models.TextField()
+
+#     def __str__(self) -> str:
+#         return f"{self.platform_name} account"
+    
+
+# class Testimonial(models.Model):
+#     name = models.TextField()
+#     proffesion = models.TextField()
+#     text = models.TextField()
+#     image =models.ImageField()
+    
+#     def __str__(self) -> str:
+#         return f"{self.name} - {self.proffesion}"
+
+# class Service(models.Model):
+#     service_name = models.TextField()
+#     service_description = models.TextField()  
+    
+#     def __str__(self) -> str:
+#         return f"{self.service_name} - {self.service_description}"
         
-    def __str__(self) -> str:
-        return f"{self.company_name} company, job_possition {self.job_possition}"
-
-class SocialMedia(models.Model):
-    platform_name = models.TextField()
-    url = models.TextField()
-
-    def __str__(self) -> str:
-        return f"{self.platform_name} account"
     
+class Language(models.Model):
+    name = models.CharField(max_length=20)
+    level = models.CharField(max_length=20)
+    created_on = models.DateTimeField(auto_now=True)
 
-class Testimonial(models.Model):
-    name = models.TextField()
-    proffesion = models.TextField()
-    text = models.TextField()
-    image =models.ImageField()
-    
     def __str__(self) -> str:
-        return f"{self.name} - {self.proffesion}"
+        return f"{self.name} - {self.level}"
 
-class Service(models.Model):
-    service_name = models.TextField()
-    service_description = models.TextField()  
-    
-    def __str__(self) -> str:
-        return f"{self.service_name} - {self.service_description}"
-        
-    
-class languages(models.Model):
-    title = models.TextField()
-    def __str__(self) -> str:
-        return f"{self.title}"
-            
+class Courses(models.Model):
+    program = models.TextField(max_length =40)
+    program_name = models.TextField(max_length =40)
+    cours_name = models.TextField(max_length =40)
 
-    
+    def __str__(self) -> str:
+        return f'{self.cours_name}'

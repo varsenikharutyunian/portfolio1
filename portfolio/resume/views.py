@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Skill
+from .models import (Skill,Education,Experience,Language,Courses)
 
 # Create your views here.
 def portfolio(request):
@@ -39,7 +39,12 @@ def portfolio(request):
 
 
 def home(request):
-    skills=Skill.objects.all()
+    skills = Skill.objects.all()
+    education = Education.objects.all()
+    experience = Experience.objects.all()
+    language = Language.objects.all()
+    courses = Courses.objects.all()
+    # testimonials = Testimonial.objects.all()
     
     return render(request,"index.html",context={"first_name":"VARSENIK",
                                                 "last_name":"HARUTYUNYAN",
@@ -67,13 +72,14 @@ def home(request):
                                                 "start_end1":"1990-1995",
                                                 "start_end2":"2005-2008",
                                                 "skills":skills,
+                                                "courses": courses,
+                                                "education": education,
+                                                "experience": experience,
+                                                "language": language,
+                                                # "testimonials": testimonials
                                                         
-                                                "languages": [
-                                                    {"lang": "English"},
-                                                    {"lang": "Russian (native)"},
-                                                    {"lang": "Armenian (native)'"},
-                                                    
-                                                    ]})
+                                                
+                                                    })
                                                 
                                                 
                                                 
