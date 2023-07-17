@@ -34,29 +34,29 @@ class Experience(models.Model):
     def __str__(self) -> str:
         return f'{self.position_name} in {self. company_name}'
     
-# class SocialMedia(models.Model):
-#     platform_name = models.TextField()
-#     url = models.TextField()
+class SocialMedia(models.Model):
+    platform_name = models.TextField()
+    url = models.TextField()
 
-#     def __str__(self) -> str:
-#         return f"{self.platform_name} account"
+    def __str__(self) -> str:
+        return f"{self.platform_name} account"
     
 
-# class Testimonial(models.Model):
-#     name = models.TextField()
-#     proffesion = models.TextField()
-#     text = models.TextField()
-#     image =models.ImageField()
+class Testimonial(models.Model):
+    name = models.TextField()
+    proffesion = models.TextField()
+    text = models.TextField()
+    image =models.ImageField()
     
-#     def __str__(self) -> str:
-#         return f"{self.name} - {self.proffesion}"
+    def __str__(self) -> str:
+        return f"{self.name} - {self.proffesion}"
 
-# class Service(models.Model):
-#     service_name = models.TextField()
-#     service_description = models.TextField()  
+class Service(models.Model):
+    service_name = models.TextField()
+    service_description = models.TextField()  
     
-#     def __str__(self) -> str:
-#         return f"{self.service_name} - {self.service_description}"
+    def __str__(self) -> str:
+        return f"{self.service_name} - {self.service_description}"
         
     
 class Language(models.Model):
@@ -67,10 +67,10 @@ class Language(models.Model):
     def __str__(self) -> str:
         return f"{self.name} - {self.level}"
 
-# class Courses(models.Model):
-#     program = models.TextField(max_length =40)
-#     program_name = models.TextField(max_length =40)
-#     cours_name = models.TextField(max_length =40)
+class Courses(models.Model):
+    program = models.TextField(max_length =40)
+    program_name = models.TextField(max_length =40)
+    cours_name = models.TextField(max_length =40)
 
-#     def __str__(self) -> str:
-#         return f'{self.cours_name}'
+    def __str__(self) -> str:
+        return f'{self.cours_name}'

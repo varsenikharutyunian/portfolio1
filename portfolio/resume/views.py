@@ -50,7 +50,7 @@ def home(request):
                                                 "last_name":"HARUTYUNYAN",
                                                 "address": "RA, Bazmaghbyur avenue 3/5",
                                                 "phone": "+37493912442",
-                                                "web": "http://127.0.0.1:8000/",
+                                                "web": "https://varsikharutyunyan.pythonanywhere.com/home/",
                                                 "email":"varsikharutyunyan72@gmail.com",
                                                 "age": "50",
                                                 "birthday": "02 Nov 1972",
